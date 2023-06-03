@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sample Page</title>
+    <style>
+        body {background-color: rgb(203, 203, 203);}
+        h1   {color: blue;}
+        p    {color: orangered;}
+    </style>
 
     <script>
 let dummy = `Lots of words in my script that hopefully
@@ -19,11 +24,17 @@ Tristique lacus nonummy tempor mattis. Scelerisque senectus rhoncus. Ac pede par
 Accumsan. Morbi imperdiet, natoque nam in. Sed platea. Sociis nostra euismod lectus a nisl bibendum suscipit. Erat, lacus. Est platea aliquam aptent egestas neque netus mus eros. Vel interdum.
 `;
 
+function f(){
+    console.log("dummy");
+}
+
+f();
+
 
 </script>
 </head>
 <body>
-    <h1>One</h1>
+    <h1 style="color:green;">One</h1>
 
     Two three    four   five
 
@@ -36,10 +47,21 @@ Accumsan. Morbi imperdiet, natoque nam in. Sed platea. Sociis nostra euismod lec
 
     <a>eight</a>
 
-    <h2>nine</h2>
+    <h2 style="color:red;">nine</h2>
 
-    <h3>ten</h3>
+    <h3 style="color:blue;">ten</h3>
 
 <div>     Eleven      Twelve</div>
+<a href="about.html">Thirteen</a>
+<div>
+<button>Fourteen</button>
+</div>
+<div>
+    <ul>
+        <li>Fourteen</li>
+        <li>15</li>
+        <li>Sixteen seventeen</li>
+      </ul> 
+</div>
 </body>
 </html>
