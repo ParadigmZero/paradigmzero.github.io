@@ -2,21 +2,44 @@
 
 <!-- 
     Embedding HTML in HTML to a depth of 1,
-    using the two possible methods:
-    iframe and embed tags
+    using the three possible methods:
+    iframe, embed and object tags
+
+    example, 6 embedded elements:
+    - 3 iframes
+    - 2 objects
+    - 1 embed
 -->
-    <body>
+
+<body>
+
+    <div>
+        <object data="./index.html"></object>
+    </div>
     <div>
         <iframe src="./index.html" title="embeddedItem1">
         </iframe>
     </div>
-<div>
-    <iframe src="./index.html">
-    </iframe>
-</div>
+    <div>
+        <iframe src="./index.html">
+        </iframe>
+    </div>
 
-<div>
-    <embed type="text/html" src="./index.html"> 
-</div>
-    </body>
-</html> 
+    <div>
+        <embed type="text/html" src="./index.html">
+    </div>
+
+
+    <div>
+        <iframe src="./index.html">
+        </iframe>
+    </div>
+
+    <div>
+        <object data="./index.html"></object>
+    </div>
+
+
+</body>
+
+</html>
