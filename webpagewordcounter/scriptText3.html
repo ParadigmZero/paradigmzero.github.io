@@ -1,0 +1,18 @@
+<html>
+
+<head>
+
+</head>
+    <body>
+
+    <p id="p1">one two three</p>
+
+    <div>foo bar</div>
+    
+    </body>
+    <script>
+        // expected result : 5 words counted: FOUR FIVE SIX foo bar
+        document.getElementById("p1").innerText = "FOUR FIVE SIX";
+        let fake = "words not to be counted";
+        </script>
+</html> 
