@@ -1,0 +1,18 @@
+<html>
+
+<head>
+
+</head>
+
+<!-- Simple example how JavaScript assigned text cannot be counted as simply
+    as HTML text... REACT pages, for instance, are a prime example of this.
+-->
+    <body>
+
+    <p id="p1">one two three 4 FIVE sIX Seven </p>
+    
+    </body>
+    <script>
+        document.getElementById("p1").innerText = document.getElementById("p1").innerText + " eight NINE 10";
+        </script>
+</html> 
