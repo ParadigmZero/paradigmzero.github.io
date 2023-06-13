@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <style>
+        body {background-color: rgb(203, 203, 203);}
+        h1   {color: blue;}
+        p    {color: orangered;}
+    </style>
+</head>
+<body>
+    <!--
+        This page only exists as a test page for the repository:
+        https://github.com/ParadigmZero/WebpageWordCounter
+        It is to be hosted at:
+        https://paradigmzero.github.io/webpagewordcount/index.html
+
+
+
+
+        RANDOM TEXT BELOW
+        <- ->
+        &№icB
+<- &№icB ->AD::)
+Dapibus, malesuada
+Enim in tristique vestibulum.
+-> ->
+        <<<< >>>>
+    -->
+    <h1 id="myh1" style="color:green;">foo bar</h1>
+    <div id="mydiv"></div>
+
+    <p  id="myp">
+    </p>
+    <a id="mya"></a>
+
+    <h2 style="color:red;" id="myh2"></h2>
+
+    <h3 style="color:blue;" id="myh3"></h3>
+
+<div id="mydiv2">     Eleven      Twelve</div>
+<a href="about.html" id="mya2">thirteen fourteen</a>
+<div>
+<button id="mybutton">15 SIXTEEN</button>
+</div>
+<div>
+    <ul>
+        <li id="myli1">17</li>
+        <li id="myli2">EigHtEEN</li>
+        <li id="myli3">NINEteen twenTY</li>
+      </ul> 
+</div>
+<div>
+    <img src="./sampleimage.png" alt="Quo eius quis hic cupiditate doloremque aut molestiae culpa in exercitationem"> 
+</div>
+
+
+<script>
+    let dummy = `Lots of words in my script that hopefully
+    aren't counted`;
+    
+    
+    let morewords = `
+    Habitasse. Cras lacus taciti fames ultrices habitant magna molestie hac ac tempor nascetur sed. Mi, inceptos suspendisse ultrices tempus tristique dictumst mattis donec venenatis dolor feugiat dapibus luctus aliquam posuere duis eleifend. Suscipit dolor per ut sapien, leo per consectetuer placerat nec. Velit eu venenatis.
+    
+    Tristique lacus nonummy tempor mattis. Scelerisque senectus rhoncus. Ac pede parturient ullamcorper diam dis sociis id senectus congue. Blandit penatibus mattis. Gravida taciti, venenatis fusce cum.
+    
+    Accumsan. Morbi imperdiet, natoque nam in. Sed platea. Sociis nostra euismod lectus a nisl bibendum suscipit. Erat, lacus. Est platea aliquam aptent egestas neque netus mus eros. Vel interdum.
+    `;
+    
+    function f(){
+        console.log("dummy function called.");
+    }
+    
+    f();
+
+    document.getElementById("myh1").innerText = "One ";
+    document.getElementById("mydiv").innerText = "Two three    four   five";
+    document.getElementById("myp").innerText = `        sIx SEVEN`;
+    document.getElementById("mya").innerText = " eight ";
+    document.getElementById("myh2").innerText = "nine";
+    document.getElementById("myh3").innerText = "ten";
+
+    document.getElementById("mydiv2").innerText = "     Eleven      Twelve"
+    document.getElementById("mya2").innerText = "thirteen fourteen"
+    document.getElementById("mybutton").innerText = "15 SIXTEEN"
+    document.getElementById("myli1").innerText = "17"
+    document.getElementById("myli2").innerText = "EigHtEEN"
+    document.getElementById("myli3").innerText = "NINEteen twenTY"
+
+    </script>
+
+
+</body>
+</html>
