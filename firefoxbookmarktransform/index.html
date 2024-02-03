@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function handleFileChange(e) {
+            console.log("loading");
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsText(file);
+            reader.onload = () => {
+                let fileContent = reader.result;
+                const allLines = fileContent.split(/\r\n|\n/);
+
+                let newString = '';
+
+                allLines.forEach((line) => {
+                    const tagsProperty = line.match(/TAGS="(.*)"/);
+                    if (tagsProperty === null) {
+                        newString += line;
+                    }
+                    else {
+                        newString += transformTags(tagsProperty);
+                    }
+
+                    newString += '\n'
+                });
+
+                newString += '\n';
+                autoDownload(newString);
+                console.log('should have triggered');
+            }
+            reader.onerror = () => {
+                console.log('file error', reader.error);
+            }
+        }
+
+        function autoDownload(str) {
+            const a = document.createElement('a');
+            const myBlob = new Blob([str], { type: 'text/html' });
+            const url = window.URL.createObjectURL(myBlob);
+
+            a.href = url;
+            a.download = "TRANSFORMED_bookmarks.html";
+
+            a.style.display = "none";
+            document.body.append(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(url);
+        }
+
+        function transformTags(tagsProperty) {
+            // tags value
+            let tags = tagsProperty[1].split(',');
+            tags = tags.map((s) => {
+                return `#${s.trim()}`;
+            });
+
+            let titleTags = ' | ';
+
+            for (const tag of tags) {
+                titleTags += `${tag} `;
+            }
+
+            titleTags = titleTags.trimEnd();
+
+            // remove TAGS property from the original line
+            let updatedLine = tagsProperty.input.replace(/[ ]*TAGS=".*"[ ]*/, '');
+            updatedLine = updatedLine.replace('</A>', `${titleTags}</A>`);
+
+            return updatedLine;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="file" accept=".html" onChange="handleFileChange(event)"></input>
+    </div>
+</body>
+
+</html>
