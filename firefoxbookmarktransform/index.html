@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Firefox Bookmark Tag Transformer</title>
     <script>
        function handleFileChange(e) {
             console.log("loading");
@@ -31,7 +31,6 @@
 
                 newString += '\n';
                 autoDownload(newString);
-                console.log('should have triggered');
             }
             reader.onerror = () => {
                 console.log('file error', reader.error);
