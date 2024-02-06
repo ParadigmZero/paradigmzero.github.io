@@ -2,11 +2,23 @@
 <html lang="en">
 
 <head>
+    <style>
+        * {
+            font-family: OpenDyslexic3, Arial, Verdana, Tahoma, sans-serif;
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firefox Bookmark Tag Transformer</title>
     <script>
-       function handleFileChange(e) {
+        function handleFileChange(e) {
             console.log("loading");
             const file = e.target.files[0];
             const reader = new FileReader();
@@ -78,7 +90,11 @@
 
 <body>
     <div>
-        <input type="file" accept=".html" onChange="handleFileChange(event)"></input>
+        <label for="inputbookmarks"
+            style="border-width: thick; border-style: solid; padding: 25px; white-space: nowrap;">Select Firefox
+            bookmarks HTML file</label>
+        <input type="file" accept=".html" onChange="handleFileChange(event)"
+            style="visibility:hidden;" id="inputbookmarks"></input>
     </div>
 </body>
 
