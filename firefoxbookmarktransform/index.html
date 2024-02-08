@@ -2,18 +2,6 @@
 <html lang="en">
 
 <head>
-    <style>
-        * {
-            font-family: OpenDyslexic3, Arial, Verdana, Tahoma, sans-serif;
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firefox Bookmark Tag Transformer</title>
@@ -86,16 +74,68 @@
             return updatedLine;
         }
     </script>
+    <style>
+        * {
+            font-family: OpenDyslexic3, Arial, Verdana, Tahoma, sans-serif;
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .parent {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 3fr 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div3 {
+            grid-area: 3 / 1 / 4 / 2;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <label for="inputbookmarks"
-            style="border-width: thick; border-style: solid; padding: 25px; white-space: nowrap;">Select Firefox
-            bookmarks HTML file</label>
-        <input type="file" accept=".html" onChange="handleFileChange(event)"
-            style="visibility:hidden;" id="inputbookmarks"></input>
+
+    <div class="parent">
+        <div class="div1">
+            &lt;A HREF="http://www.example.com" TAGS="one,two,three four five&gt;Example&lt;/A&gt;
+            <br />
+            ↓ <br />
+
+            &lt;A HREF="http://www.example.com"&gt;Example | #one #two #three four five&lt;/A&gt;
+
+        </div>
+        <div class="div2">
+            <label for="inputbookmarks"
+                style="border-width: thick; border-style: solid; padding: 25px; white-space: nowrap;">Select Firefox
+                bookmarks HTML file</label>
+            <input type="file" accept=".html" onChange="handleFileChange(event)" style="visibility:hidden;"
+                id="inputbookmarks"></input>
+        </div>
+        <div class="div3">
+            <A
+                href="https://github.com/ParadigmZero/paradigmzero.github.io/blob/master/firefoxbookmarktransform/index.html">
+                <img src="github-mark-white.svg">
+            </A>
+        </div>
     </div>
+
 </body>
 
 </html>
