@@ -75,8 +75,19 @@
         }
     </script>
     <style>
+        @font-face {
+            font-family: OpenDyslexic;
+            src: url(fonts/OpenDyslexic3-Regular.ttf);
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: OpenDyslexic;
+            src: url(fonts/OpenDyslexic3-Bold.ttf);
+            font-weight: bold;
+        }
         * {
-            font-family: OpenDyslexic3, Arial, Verdana, Tahoma, sans-serif;
+            font-family: OpenDyslexic3, OpenDyslexic, Arial, Verdana, Tahoma, sans-serif;
             background-color: black;
             color: white;
             position: fixed;
